@@ -29,7 +29,7 @@ If there is a unknown property in the descriptor.
 `quarkus-extension.invalidOldPropertyType`::
 If a property in the old version of the descriptor has a type that is not expected for given property.
 
-`quarkus-extension.invalidNew`PropertyType`::
+`quarkus-extension.invalidNewPropertyType`::
 If a property in the new version of the descriptor has a type that is not expected for given property.
 
 `quarkus-extension.statusChanged`::
