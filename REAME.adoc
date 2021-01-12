@@ -1,0 +1,7 @@
+= Revapi Quarkus Extension
+
+This is an experimental Revapi extension for checking Quarkus extensions.
+
+Currently, it only checks for changes in the `META-INF/quarkus-extension.yaml` files
+but in the future it could also check for configuration changes by scanning the annotated
+configuration classes, etc.
