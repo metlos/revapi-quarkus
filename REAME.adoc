@@ -5,3 +5,33 @@ This is an experimental Revapi extension for checking Quarkus extensions.
 Currently, it only checks for changes in the `META-INF/quarkus-extension.yaml` files
 but in the future it could also check for configuration changes by scanning the annotated
 configuration classes, etc.
+
+== Usage
+
+You need to have https://revapi.org[Revapi] enabled in your build. You then need to add this
+extension as a dependency of the `revapi-maven-plugin`. Et voila, if there is a `META-INF/quarkus-extension.yaml` file
+in your JAR, it will be checked for correctness and changes.
+
+== Detected problems
+
+`quarkus-extension.propertyAdded`::
+If a new property is added to the extension descriptor as compared with the previous version.
+
+`quarkus-extension.propertyRemoved`::
+If a property is removed from the extension descriptor as compared with the previous version.
+
+`quarkus-extension.propertyChanged`::
+If a value of a property in the descritor changes.
+
+`quarkus-extension.invalidProperty`::
+If there is a unknown property in the descriptor.
+
+`quarkus-extension.invalidOldPropertyType`::
+If a property in the old version of the descriptor has a type that is not expected for given property.
+
+`quarkus-extension.invalidNew`PropertyType`::
+If a property in the new version of the descriptor has a type that is not expected for given property.
+
+`quarkus-extension.statusChanged`::
+A specialization of `quarkus-extension.propertyChanged` for the `/metadata/status` field. The status of the extension
+is important enough to warrant special treatment.
